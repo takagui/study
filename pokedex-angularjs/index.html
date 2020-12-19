@@ -23,15 +23,10 @@
     />
     
     <ul class="poke-list" id="pokeList">
-      <li class="poke-list-item" ng-repeat="pokemon in vm.pokemonList">
-        <a href="#">
-          <img
-            ng-src="//serebii.net/pokedex-xy/icon/{{ pokemon.number }}.png"
-            alt="Ícone do {{ pokemon.name }}"
-          >
-          <span>{{ pokemon.number }} - {{ pokemon.name }}</span>
-        </a>
-      </li>
+      <poke-list-item-component
+        ng-repeat="pokemon in vm.pokemonList"
+        pokemon="pokemon"
+      ></poke-list-item-component>
     </ul>
   </div>
 
@@ -43,5 +38,6 @@
   </script>
   <script src="js/App.js" ></script>
   <script src="js/controllers/PokeDexController.js" ></script>
+  <script src="js/components/PokeListItem/PokeListItemComponent.js" ></script>
 </body>
 </html>
